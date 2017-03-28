@@ -146,9 +146,7 @@ public class AlquilerTest {
                 
         Item item=sa.consultarItem(4);
         //prueba: el costo de 3 unidades
-        //assertEquals("El costo se calcula incorrectamente "+
-                "0 dias de alquiler de un item debe ser 0 en el costo"
-                ,3000*3,sa.consultarCostoAlquiler(4,3));
+        //assertEquals("El costo se calcula incorrectamente "+"0 dias de alquiler de un item debe ser 0 en el costo",3000*3,sa.consultarCostoAlquiler(4,3));
                 
     }
     
