@@ -34,7 +34,7 @@ public class AlquilerTest {
     @Before
     public void setUp() {
     }
-    
+    /**
     @Test
     public void CF1Test() throws ExcepcionServiciosAlquiler{
         ServiciosAlquiler sa=ServiciosAlquilerFactory.getInstance().getServiciosAlquiler();
@@ -259,6 +259,6 @@ public class AlquilerTest {
         
     }
     
-    
+    **/
     
 }
