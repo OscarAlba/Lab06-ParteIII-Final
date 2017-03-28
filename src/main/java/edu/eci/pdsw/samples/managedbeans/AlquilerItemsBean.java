@@ -47,7 +47,7 @@ public class AlquilerItemsBean implements Serializable {
     public AlquilerItemsBean() {
        
         nuevoCliente =new Cliente();
-        selecCliente =new Cliente();
+        selecCliente =null;
         codigoBarras=0;
         Costo=0;
         dias=0;
@@ -82,7 +82,7 @@ public class AlquilerItemsBean implements Serializable {
     
     public void registrarNuevoCliente() throws ExcepcionServiciosAlquiler {
         sp.registrarCliente(nuevoCliente);
-        nuevoCliente =new Cliente();
+        
     }
     
     public List<ItemRentado> getConsultarItemsCliente() throws ExcepcionServiciosAlquiler {

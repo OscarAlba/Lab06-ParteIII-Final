@@ -70,7 +70,7 @@
     
      </select>
       
-     <select parameterType="map" id="consultarItemRentado" resultMap="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper.ItemRentadoResult">
+     <select parameterType="map" id="consultarItemsRentado" resultMap="edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ItemMapper.ItemRentadoResult">
         select
                 
         ir.id,
@@ -108,6 +108,10 @@
         
     <insert parameterType="map" id="agregarItemRentadoACliente" >
         insert into VI_ITEMRENTADO (CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta) values (#{idcli},#{iditem},#{Inicio},#{Fin});
+    </insert>
+    
+    <insert parameterType="map" id="agregarCliente" >
+        insert into VI_CLIENTES (documento,nombre,telefono,direccion,email,vetado) values (#{cli.documento},#{cli.nombre},#{cli.telefono},#{cli.direccion},#{cli.email},#{cli.vetado});
     </insert>
     
         

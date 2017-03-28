@@ -10,6 +10,7 @@ import edu.eci.pdsw.sampleprj.dao.ClienteDAO;
 import edu.eci.pdsw.sampleprj.dao.PersistenceException;
 import edu.eci.pdsw.sampleprj.dao.mybatis.mappers.ClienteMapper;
 import edu.eci.pdsw.samples.entities.Cliente;
+import edu.eci.pdsw.samples.entities.Item;
 import edu.eci.pdsw.samples.entities.ItemRentado;
 import java.util.Date;
 import java.util.List;
@@ -25,6 +26,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
     @Override
     public void save(Cliente client) throws PersistenceException{
         try{
+            System.out.println(client.getDocumento());
             clienteMapper.agregarCliente(client);
         }
         catch(org.apache.ibatis.exceptions.PersistenceException e){
@@ -54,7 +56,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
     }
 
     @Override
-    public List<ItemRentado> loadRentados(long id) throws PersistenceException {
+    public List<Item> loadRentados(long id) throws PersistenceException {
         try{
             return clienteMapper.consultarItemRentado((int) id);
         }

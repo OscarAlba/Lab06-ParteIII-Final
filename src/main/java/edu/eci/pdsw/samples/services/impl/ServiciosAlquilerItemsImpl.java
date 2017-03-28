@@ -64,7 +64,7 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
     }
 
     @Override
-    public List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler {
+    public List<Item> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler {
         try {
             return daoCliente.loadRentados(idcliente);
         } catch (PersistenceException ex) {
@@ -199,9 +199,10 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
         //No estan en el Bean
     }
 
+
     @Override
-    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
-        //No estan en el Bean
+    public void vetarCliente(long docu, int estado) throws ExcepcionServiciosAlquiler {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

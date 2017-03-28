@@ -68,7 +68,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
     }
 
     @Override
-    public void vetarCliente(long docu, boolean estado) throws ExcepcionServiciosAlquiler {
+    public void vetarCliente(long docu, int estado) throws ExcepcionServiciosAlquiler {
         if(clientes.containsKey(docu)){
             Cliente c=clientes.get(docu);
             c.setVetado(estado);            
@@ -269,9 +269,9 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
         list3.add(ir3);
 
         
-        Cliente c1=new Cliente("Oscar Alba", 1026585664, "6788952", "KRA 109#34-C30", "oscar@hotmail.com", false,list1);
-        Cliente c2=new Cliente("Carlos Ramirez", 1026585663, "6584562", "KRA 59#27-a22", "carlos@hotmail.com", false,list2);
-        Cliente c3=new Cliente("Ricardo Pinto", 1026585669, "4457863", "KRA 103#94-a77", "ricardo@hotmail.com", false,list3);
+        Cliente c1=new Cliente("Oscar Alba", 1026585664, "6788952", "KRA 109#34-C30", "oscar@hotmail.com", 0,list1);
+        Cliente c2=new Cliente("Carlos Ramirez", 1026585663, "6584562", "KRA 59#27-a22", "carlos@hotmail.com", 0,list2);
+        Cliente c3=new Cliente("Ricardo Pinto", 1026585669, "4457863", "KRA 103#94-a77", "ricardo@hotmail.com", 0,list3);
         clientes.put(c1.getDocumento(), c1);
         clientes.put(c2.getDocumento(), c2);
         clientes.put(c3.getDocumento(), c3);
