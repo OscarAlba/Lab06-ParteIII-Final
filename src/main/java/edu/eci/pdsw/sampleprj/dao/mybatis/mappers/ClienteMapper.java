@@ -19,10 +19,10 @@ public interface ClienteMapper {
     /**
      * Registrar un nuevo item rentado asociado al cliente identificado
      * con 'idc' y relacionado con el item identificado con 'idi'
-     * @param id
-     * @param idit
-     * @param fechainicio
-     * @param fechafin 
+     * @param idcli ide cliente
+     * @param iditem ide item
+     * @param Inicio fecha inicio
+     * @param Fin  fecha fin
      */
     public void agregarItemRentadoACliente(@Param("idcli")int id, 
             @Param("iditem")int idit, 
@@ -31,7 +31,7 @@ public interface ClienteMapper {
 
     /**
      * Consultar todos los clientes
-     * @return 
+     * @return retorna lista de clientes
      */
     public List<Cliente> consultarClientes();
    
