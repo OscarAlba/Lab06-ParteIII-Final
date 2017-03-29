@@ -17,7 +17,6 @@ import edu.eci.pdsw.samples.services.ServiciosAlquiler;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
-import static java.time.temporal.TemporalQueries.localDate;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;

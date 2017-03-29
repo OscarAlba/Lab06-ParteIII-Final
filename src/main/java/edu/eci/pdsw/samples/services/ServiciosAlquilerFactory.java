@@ -71,7 +71,7 @@ public class ServiciosAlquilerFactory {
 
         
     }
-
+    
     public ServiciosAlquiler getServiciosAlquiler(){
         return injector.getInstance(ServiciosAlquiler.class);   
     }
@@ -114,5 +114,4 @@ public class ServiciosAlquilerFactory {
     public static ServiciosAlquilerFactory getInstance(){
         return instance;
     }
-    
 }

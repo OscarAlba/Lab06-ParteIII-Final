@@ -5,6 +5,10 @@
  */
 package edu.eci.pdsw.samples.tests;
 
+import com.google.inject.Inject;
+import edu.eci.pdsw.sampleprj.dao.ClienteDAO;
+import edu.eci.pdsw.sampleprj.dao.ItemDAO;
+import edu.eci.pdsw.sampleprj.dao.TipoItemDAO;
 import edu.eci.pdsw.samples.entities.Cliente;
 import edu.eci.pdsw.samples.entities.Item;
 import edu.eci.pdsw.samples.services.ExcepcionServiciosAlquiler;
@@ -14,7 +18,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-
+import edu.eci.pdsw.sampleprj.dao.*;
 
 /**
  * 
@@ -27,9 +31,16 @@ import static org.junit.Assert.*;
  * a la limite. (multa multa_diaria*dias_retraso)
  */
 public class AlquilerTest {
-
     public AlquilerTest() {
     }
+    
+    @Inject
+    private ItemDAO daoItem;
+    @Inject
+    private ClienteDAO daoCliente;
+    @Inject
+    private TipoItemDAO daoTipoItem;
+    
     
     @Before
     public void setUp() {
@@ -37,8 +48,8 @@ public class AlquilerTest {
     
     @Test
     public void CF1Test() throws ExcepcionServiciosAlquiler{
-        /*ServiciosAlquiler sa=ServiciosAlquilerFactory.getInstance().getServiciosAlquiler();
-        
+        ServiciosAlquiler sa=ServiciosAlquilerFactory.getInstance().getServiciosAlquilerTesting();
+        /*
         Item i1=new Item(sa.consultarTipoItem(1), 44, "Los 4 Fantasticos", "Los 4 Fantásticos  es una película de superhéroes  basada en la serie de cómic homónima de Marvel.", java.sql.Date.valueOf("2005-06-08"), 2000, "DVD", "Ciencia Ficcion");        
         sa.registrarCliente(new Cliente("Juan Perez",3842,"24234","calle 123","aa@gmail.com"));
         sa.registrarItem(i1);
