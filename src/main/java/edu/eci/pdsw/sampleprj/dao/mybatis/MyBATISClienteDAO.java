@@ -56,7 +56,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
     }
 
     @Override
-    public List<Item> loadRentados(long id) throws PersistenceException {
+    public List<ItemRentado> loadRentados(long id) throws PersistenceException {
         try{
             return clienteMapper.consultarItemRentado((int) id);
         }

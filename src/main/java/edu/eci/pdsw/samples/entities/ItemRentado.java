@@ -28,8 +28,6 @@ public class ItemRentado implements Serializable{
         this.fechafinrenta = fechafinrenta;
     }
     
-    
-    
     public ItemRentado() {
     }
 

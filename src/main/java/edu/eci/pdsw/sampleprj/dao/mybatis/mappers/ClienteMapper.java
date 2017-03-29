@@ -32,6 +32,6 @@ public interface ClienteMapper {
      */
     public List<Cliente> consultarClientes();
    
-    public List<Item> consultarItemRentado(@Param("idcli") int id);
+    public List<ItemRentado> consultarItemRentado(@Param("idcli") int id);
     
 }

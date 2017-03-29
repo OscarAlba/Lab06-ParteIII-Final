@@ -23,7 +23,7 @@ public interface ItemMapper {
     
     public List<ItemRentado> getItemsRentados();
     
-    public List<ItemRentado> getItemsDisponibles();
+    public List<Item> getItemsDisponibles();
     
     public ItemRentado consultarItemRentado(@Param("idItem")int id);
   

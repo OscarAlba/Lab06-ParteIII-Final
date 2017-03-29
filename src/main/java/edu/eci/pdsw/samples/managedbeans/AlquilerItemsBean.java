@@ -86,7 +86,7 @@ public class AlquilerItemsBean implements Serializable {
     }
     
     public List<ItemRentado> getConsultarItemsCliente() throws ExcepcionServiciosAlquiler {
-        return sp.consultarItemsCliente(selecCliente.getDocumento());
+        return sp.consultarItemCliente(selecCliente.getDocumento());
     }
     public List<Item> getConsultarItemsDisponibles() throws ExcepcionServiciosAlquiler{
         List<Item> s =sp.consultarItemsDisponibles();

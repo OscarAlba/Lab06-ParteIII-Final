@@ -23,7 +23,7 @@ public interface ClienteDAO {
     
     public Cliente load(long id) throws PersistenceException;
     
-    public List<Item> loadRentados(long id) throws PersistenceException;
+    public List<ItemRentado> loadRentados(long id) throws PersistenceException;
     
     public List<Cliente> loadAll() throws PersistenceException;
     

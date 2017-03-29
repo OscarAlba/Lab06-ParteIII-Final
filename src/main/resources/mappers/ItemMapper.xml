@@ -54,8 +54,8 @@
         
     </select>
     
-    <select parameterType="map" id="consultarItemRentado" resultMap="ItemResult">
-        select
+    <select parameterType="map" id="consultarItemRentado" resultMap="ItemRentadoResult">
+       select
        ir.id ,
        ir.fechainiciorenta,
        ir.fechafinrenta,
@@ -75,6 +75,10 @@
        left join VI_ITEMS as i on ir.ITEMS_id=i.id 
        left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id  
        WHERE i.id=#{idItem};
+    </select>
+    
+    <select parameterType="map" id="getItemsDisponibles" resultMap="ItemResult">
+       select * FROM VI_ITEMS  where id not in(select ITEMS_id FROM VI_ITEMRENTADO)
     </select>
     
 </mapper>

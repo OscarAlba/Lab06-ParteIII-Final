@@ -58,17 +58,17 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
         try {
             return daoCliente.load(docu);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosAlquiler("Error al consultar el item "+docu,ex);
+            throw new ExcepcionServiciosAlquiler("Error al consultar el cliente"+docu,ex);
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Item> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler {
+    public List<ItemRentado> consultarItemCliente(long idcliente) throws ExcepcionServiciosAlquiler {
         try {
             return daoCliente.loadRentados(idcliente);
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosAlquiler("Error al consultar el item "+idcliente,ex);
+            throw new ExcepcionServiciosAlquiler("Error al consultar el item del cliente "+idcliente,ex);
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -95,18 +95,20 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
     @Override
     public List<Item> consultarItemsDisponibles() throws ExcepcionServiciosAlquiler{
        try {
-            return daoItem.loadAll();
+            return daoItem.loadDisponibles();
         } catch (PersistenceException ex) {
-            throw new ExcepcionServiciosAlquiler("Error al consultar los clientes "+ex);
+            throw new ExcepcionServiciosAlquiler("Error al consultar los disponibles"+ex);
         }
     }
 
     @Override
     public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
+        
         long total=0;
         try {
             ItemRentado ir = daoItemRentado.load(iditem);
-             if(ir== null){
+            System.out.println(ir);
+             if(ir == null){
                  throw new ExcepcionServiciosAlquiler("El item "+iditem+"no esta en alquiler");
              }else{
                  LocalDate fechaMinimaEntrega = ir.getFechafinrenta().toLocalDate();

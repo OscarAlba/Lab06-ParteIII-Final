@@ -25,7 +25,7 @@ public interface ServiciosAlquiler {
      * identificado con 'idcliente'
      * @throws ExcepcionServiciosAlquiler si el cliente no esta registrado
      */
-    public abstract List<ItemRentado> consultarItemsCliente(long idcliente) throws ExcepcionServiciosAlquiler;
+    public abstract List<ItemRentado> consultarItemCliente(long idcliente) throws ExcepcionServiciosAlquiler;
 
     public abstract List<Cliente> consultarClientes() throws ExcepcionServiciosAlquiler;
 
