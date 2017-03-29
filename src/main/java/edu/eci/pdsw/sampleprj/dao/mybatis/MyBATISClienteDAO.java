@@ -67,7 +67,7 @@ public class MyBATISClienteDAO implements ClienteDAO{
     }
 
     @Override
-    public void AddItemRentado(int id, int idit, Date fechainicio, Date fechafin) throws PersistenceException {
+    public void AddItemRentado(long id, int idit, Date fechainicio, Date fechafin) throws PersistenceException {
         
         clienteMapper.agregarItemRentadoACliente(id, idit, fechainicio, fechafin);
         

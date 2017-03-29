@@ -107,7 +107,7 @@
     </resultMap>
         
     <insert parameterType="map" id="agregarItemRentadoACliente" >
-        insert into VI_ITEMRENTADO (CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta) values (#{idcli},#{iditem},#{Inicio},#{Fin});
+        insert into VI_ITEMRENTADO (id,CLIENTES_documento,ITEMS_id,fechainiciorenta,fechafinrenta) values (#{iditem},#{idcli},#{iditem},#{Inicio},#{Fin});
     </insert>
     
     <insert parameterType="map" id="agregarCliente" >

@@ -48,12 +48,7 @@
         left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id  
         WHERE i.id=#{idItem};
     </select>
-    
-    <select parameterType="map" id="consultarItemsDisponibles" resultMap="ItemResult">
-       
         
-    </select>
-    
     <select parameterType="map" id="consultarItemRentado" resultMap="ItemRentadoResult">
        select
        ir.id ,

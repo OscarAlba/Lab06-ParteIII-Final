@@ -27,6 +27,6 @@ public interface ClienteDAO {
     
     public List<Cliente> loadAll() throws PersistenceException;
     
-    public void AddItemRentado(int id,int idit,Date fechainicio,Date fechafin) throws PersistenceException;
+    public void AddItemRentado(long id,int idit,Date fechainicio,Date fechafin) throws PersistenceException;
     
 }

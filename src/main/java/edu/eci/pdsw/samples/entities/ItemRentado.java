@@ -21,8 +21,7 @@ public class ItemRentado implements Serializable{
     private Date fechafinrenta;
     
 
-    public ItemRentado(Item item, Date fechainiciorenta, Date fechafinrenta) {
-              
+    public ItemRentado(Item item, Date fechainiciorenta, Date fechafinrenta,long doc) {
         this.item = item;
         this.fechainiciorenta = fechainiciorenta;
         this.fechafinrenta = fechafinrenta;

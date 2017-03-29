@@ -153,9 +153,10 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
         LocalDate ld=date.toLocalDate();
         LocalDate ld2=ld.plusDays(numdias);
         Date date2 = Date.valueOf(ld2);
+        
         try {
             if(daoCliente.load(docu).getDocumento()== docu){
-                daoCliente.AddItemRentado((int)docu,item.getId(),date,date2);   
+                daoCliente.AddItemRentado(docu,item.getId(),date,date2);   
             }
         } catch (PersistenceException ex) {
             Logger.getLogger(ServiciosAlquilerItemsImpl.class.getName()).log(Level.SEVERE, null, ex);

@@ -21,7 +21,7 @@ public interface ClienteMapper {
      * Registrar un nuevo item rentado asociado al cliente identificado
      * con 'idc' y relacionado con el item identificado con 'idi'
      */
-    public void agregarItemRentadoACliente(@Param("idcli")int id, 
+    public void agregarItemRentadoACliente(@Param("idcli")long id, 
             @Param("iditem")int idit, 
             @Param("Inicio")Date fechainicio,
             @Param("Fin")Date fechafin);

@@ -137,7 +137,7 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
         LocalDate ld=date.toLocalDate();
         LocalDate ld2=ld.plusDays(numdias);
         
-        ItemRentado ir=new ItemRentado(item,date,java.sql.Date.valueOf(ld2));
+        ItemRentado ir=new ItemRentado(item,date,java.sql.Date.valueOf(ld2),docu);
 
         if (clientes.containsKey(docu)) {
             Cliente c = clientes.get(docu);
@@ -257,21 +257,21 @@ public class ServiciosAlquilerItemsStub implements ServiciosAlquiler {
         itemsDisponibles.put(6, i6);
         
         
-        ItemRentado ir1=new ItemRentado(i1, java.sql.Date.valueOf("2017-01-01"), java.sql.Date.valueOf("2017-03-12"));
-        ItemRentado ir2=new ItemRentado(i2, java.sql.Date.valueOf("2017-01-04"), java.sql.Date.valueOf("2017-04-7"));
-        ItemRentado ir3=new ItemRentado(i1, java.sql.Date.valueOf("2017-01-07"), java.sql.Date.valueOf("2017-07-12"));
-        
+        ItemRentado ir1=new ItemRentado(i1, java.sql.Date.valueOf("2017-01-01"), java.sql.Date.valueOf("2017-03-12"),1026585664);
+        ItemRentado ir2=new ItemRentado(i2, java.sql.Date.valueOf("2017-01-04"), java.sql.Date.valueOf("2017-04-7"),1026585663);
+        ItemRentado ir3=new ItemRentado(i1, java.sql.Date.valueOf("2017-01-07"), java.sql.Date.valueOf("2017-07-12"),1026585669);
+       
         ArrayList<ItemRentado> list1 = new ArrayList<>();
         list1.add(ir1);
         ArrayList<ItemRentado> list2 = new ArrayList<>();
         list2.add(ir2);
         ArrayList<ItemRentado> list3 = new ArrayList<>();
         list3.add(ir3);
-
-        
         Cliente c1=new Cliente("Oscar Alba", 1026585664, "6788952", "KRA 109#34-C30", "oscar@hotmail.com", 0,list1);
         Cliente c2=new Cliente("Carlos Ramirez", 1026585663, "6584562", "KRA 59#27-a22", "carlos@hotmail.com", 0,list2);
         Cliente c3=new Cliente("Ricardo Pinto", 1026585669, "4457863", "KRA 103#94-a77", "ricardo@hotmail.com", 0,list3);
+        
+       
         clientes.put(c1.getDocumento(), c1);
         clientes.put(c2.getDocumento(), c2);
         clientes.put(c3.getDocumento(), c3);
