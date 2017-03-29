@@ -48,7 +48,7 @@ public interface ServiciosAlquiler {
      * @throws ExcepcionServiciosAlquiler si el item no existe o no esta
      * actualmente alquilado
      */
-    public abstract long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler;
+    public abstract long consultarMultaAlquiler(ItemRentado iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler;
 
     public abstract TipoItem consultarTipoItem(int id) throws ExcepcionServiciosAlquiler;
 

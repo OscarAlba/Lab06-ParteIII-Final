@@ -23,6 +23,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.binding.Bindings;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -94,10 +95,11 @@ public class AlquilerItemsBean implements Serializable {
     }
     public long getConsultarMultaAlquiler() throws ExcepcionServiciosAlquiler{
         long total=0;
-        List<ItemRentado> lista = selecCliente.getRentados();
+        List<ItemRentado> lista = getConsultarItemsCliente();
+        
         if (lista.size() > 0) {
-            for (int i = 0; i < lista.size(); i++) {
-                total += sp.consultarMultaAlquiler(lista.get(i).getItem().getId(), java.sql.Date.valueOf(LocalDate.now()));
+            for (int i = 0; i < lista.size()  ; i++) {
+                total += sp.consultarMultaAlquiler(lista.get(i), java.sql.Date.valueOf(LocalDate.now()));
             }
         }
         return total;

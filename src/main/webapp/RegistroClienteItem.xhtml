@@ -5,7 +5,7 @@
     <h:head><title>Items del cliente</title></h:head>
     <h:body>
         <h:form id="ItemsClientes">
-          <p:layout style="min-width:600px;min-height:750px;">
+          <p:layout style="min-width:800px;min-height:900px;">
               <p:layoutUnit resizable="true" position="center" header="Lista de Items en alquiler del cliente seleccionado">
                   <p:dataTable id="TablaItems" var="Items"  value="#{AlquilerItems.consultarItemsCliente}">
                      
@@ -29,10 +29,10 @@
                       </p:column>
                   </p:dataTable>
                   <br/>
-                  <!--h:outputText value="Multa: {AlquilerItems.consultarMultaAlquiler}" /-->
+                  <h:outputText value="Multa: #{AlquilerItems.consultarMultaAlquiler}" />
                   <br/>
               </p:layoutUnit>
-              <p:layoutUnit resizable="true" position="south" header="Registrar nuevo Alquiler" size="550">
+              <p:layoutUnit resizable="true" position="south" header="Registrar nuevo Alquiler" size="400">
                   <p:panel id="panelAlquiler" header="Item rentado">
                       <p:dataTable id="ItemsD" var="ItemD"  value="#{AlquilerItems.consultarItemsDisponibles}">
                           <p:column headerText="ID Items Disponibles">

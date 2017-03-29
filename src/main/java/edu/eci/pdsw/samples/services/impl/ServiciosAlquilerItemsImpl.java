@@ -102,27 +102,27 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
     }
 
     @Override
-    public long consultarMultaAlquiler(int iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
+    public long consultarMultaAlquiler(ItemRentado iditem, Date fechaDevolucion) throws ExcepcionServiciosAlquiler {
         
-        long total=0;
-        try {
-            ItemRentado ir = daoItemRentado.load(iditem);
-            System.out.println(ir);
-             if(ir == null){
-                 throw new ExcepcionServiciosAlquiler("El item "+iditem+"no esta en alquiler");
-             }else{
-                 LocalDate fechaMinimaEntrega = ir.getFechafinrenta().toLocalDate();
-                 LocalDate fechaEntrega = fechaDevolucion.toLocalDate();
-                 long diasRetraso = ChronoUnit.DAYS.between(fechaMinimaEntrega, fechaEntrega);
-                 total=diasRetraso * MULTA_DIARIA;
-             }
-            
-        } catch (PersistenceException ex) {
-            Logger.getLogger(ServiciosAlquilerItemsImpl.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return total;
+        /*
+        ItemRentado ir = daoItemRentado.load(iditem);
+        System.out.println(ir.getId()+"144444");
+        if(ir == null){
+        throw new ExcepcionServiciosAlquiler("El item "+iditem+"no esta en alquiler");
+        }else{
+        LocalDate fechaMinimaEntrega = ir.getFechafinrenta().toLocalDate();
+        LocalDate fechaEntrega = fechaDevolucion.toLocalDate();
+        long diasRetraso = ChronoUnit.DAYS.between(fechaMinimaEntrega, fechaEntrega);
+        total=diasRetraso * MULTA_DIARIA;
         
-   
+        }*/
+        LocalDate fechaMinimaEntrega = iditem.getFechafinrenta().toLocalDate();
+        LocalDate fechaEntrega = fechaDevolucion.toLocalDate();
+        long diasRetraso = ChronoUnit.DAYS.between(fechaMinimaEntrega, fechaEntrega);
+        if( diasRetraso * MULTA_DIARIA>0){
+            return diasRetraso * MULTA_DIARIA;}
+        else{
+            return 0;}
     }
 
     @Override
@@ -181,7 +181,7 @@ public class ServiciosAlquilerItemsImpl implements ServiciosAlquiler {
     public long consultarCostoAlquiler(int iditem, int numdias) throws ExcepcionServiciosAlquiler {
         long total = 0;
         try {
-            if(daoItemRentado.load(iditem).getItem().getId()!= iditem){
+            if(daoItem.load(iditem)!=null){
                 total = daoItem.load(iditem).getTarifaxDia()* numdias;
             }else{
                 throw new ExcepcionServiciosAlquiler("El item " + iditem + "no esta en alquiler");

@@ -69,7 +69,7 @@
        FROM VI_CLIENTES as c join VI_ITEMRENTADO as ir on c.documento=ir.CLIENTES_documento 
        left join VI_ITEMS as i on ir.ITEMS_id=i.id 
        left join VI_TIPOITEM as ti on i.TIPOITEM_id=ti.id  
-       WHERE i.id=#{idItem};
+       WHERE ir.ITEMS_id=#{idItem};
     </select>
     
     <select parameterType="map" id="getItemsDisponibles" resultMap="ItemResult">
