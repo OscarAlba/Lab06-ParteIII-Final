@@ -132,6 +132,7 @@ public class AlquilerItemsBean implements Serializable {
             Item nuevoItem = sp.consultarItem(codigoBarras);
             sp.registrarAlquilerCliente(java.sql.Date.valueOf(LocalDate.now()), selecCliente.getDocumento(), nuevoItem, dias);
             dias=0;
+            Costo=0;
             codigoBarras=0;
         }
 
